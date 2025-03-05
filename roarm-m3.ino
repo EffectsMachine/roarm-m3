@@ -143,13 +143,14 @@ void setup() {
   screenLine_2 = String("MAC:") + macToString(thisDevMac);
   oled_update();
 
+  RoArmM3_handTorqueCtrl(300);
+
+  RoArmM3_allPosAbsBesselCtrl(l2B + l3A + ARM_L4_LENGTH_MM_A, 0, l2A - ARM_L4_LENGTH_MM_B, 0, 0, 3.14, 0.25);
+
   if(InfoPrint == 1){Serial.println("Application initialization settings.");}
   createMission("boot", "these cmds run automatically at boot.");
   missionPlay("boot", 1);
 
-  RoArmM3_handTorqueCtrl(300);
-
-  RoArmM3_allPosAbsBesselCtrl(l2B + l3A + ARM_L4_LENGTH_MM_A, 0, l2A - ARM_L4_LENGTH_MM_B, 0, 0, 3.14, 0.25);
 }
 
 
