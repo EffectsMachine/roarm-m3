@@ -1733,8 +1733,8 @@ const char vertical_drag_html[] PROGMEM = R"rawliteral(
             </div>
         </div>
         <div class="sliderValueBox">
-            <div class="sliderValue" id="sliderValue"><span>50</span></div>
-            <input type="range" id="slider" min="-200" max="400" value="50">
+            <div class="sliderValue" id="sliderValue"><span>310</span></div>
+            <input type="range" id="slider" min="300" max="600" value="310">
         </div>
         <div class="moviingCtlPanel">
             <p id="movingCtrl">press [Enter] to enable movingCtrl.</p>
