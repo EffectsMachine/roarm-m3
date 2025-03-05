@@ -301,7 +301,7 @@ int RoArmM3_shoulderJointCtrlRad(byte returnType, double radInput, u16 speedInpu
 // angleInput increase, it moves down.
 int RoArmM3_elbowJointCtrlRad(byte returnType, double radInput, u16 speedInput, u8 accInput) {
   s16 computePos = calculatePosByRad(radInput) + 1024;
-  goalPos[3] = constrain(computePos, 512, 3071);
+  goalPos[3] = constrain(computePos, 512, 2960);
 
   if(returnType){
     st.WritePosEx(ELBOW_SERVO_ID, goalPos[3], speedInput, accInput);
@@ -344,7 +344,7 @@ int RoArmM3_rollJointCtrlRad(byte returnType, double radInput, u16 speedInput, u
 //           1: position ctrl. - cmd: input angle in radius.
 int RoArmM3_handJointCtrlRad(byte returnType, double radInput, u16 speedInput, u8 accInput) {
   s16 computePos = calculatePosByRad(radInput);
-  goalPos[6] = constrain(computePos, 700, 3396);
+  goalPos[6] = constrain(computePos, 700, 2596);
 
   if (returnType) {
     st.WritePosEx(GRIPPER_SERVO_ID, goalPos[6], speedInput, accInput);
